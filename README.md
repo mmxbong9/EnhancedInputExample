@@ -6,7 +6,7 @@
 - [미오29살 UE5 C++ Enhanced Input in PlayerController | 언리얼엔진5 | 01](https://youtu.be/KJyl46GWiXw)
 
 ### 기능
-Tab 키 입력을 통해 임의로 지정한 Play, Menu 두가지 상태를 토클 하며, 그에 맞는 Input Binding 을 시행 함.
+Tab 키 입력을 통해 임의로 지정한 Play, Menu 두가지 상태를 토글 하며, 그에 맞는 Input Binding 을 시행 함.
 - UTPInputPlayData(PlayActions): ChangeMode(tab), Jump(space) Move(w,a,s,d) Look(mousepos x,y)
 - UTPInputMenuData(MenuActions): Look(mousepos x,y), TogglePlayerInfo(u)
 
