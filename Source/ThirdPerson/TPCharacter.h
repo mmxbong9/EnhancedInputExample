@@ -29,7 +29,7 @@ public:
 	void Move(const FVector2d& InMoveVector);
 
 	/** Called for looking input */
-	void Look(const FVector2d& InMoveVector);
+	void Look(const FVector2d& InLookAxisVector);
 
 protected:
 	virtual void BeginPlay() override;
