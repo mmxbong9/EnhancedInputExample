@@ -12,6 +12,7 @@
 #include "InputMappingContext.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "Blueprint/UserWidget.h"
 
 
 ATPPlayerController::ATPPlayerController(const FObjectInitializer& ObjectInitializer)
@@ -89,6 +90,26 @@ void ATPPlayerController::ShowPopupPlayerInfo(const FInputActionValue& Value)
 {
 	UE_LOG(LogClass, Display, TEXT("ShowPopupPlayerInfo()"));
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Orange, TEXT("TODO: 플레이어 정보 위젯 띄워야함."));
+
+	if (PlayerInfoWidget == nullptr)
+	{
+		UE_LOG(LogTemp, Error, TEXT("PlayerInfoWidget 슬롯에 아무것도 없습니다."));
+		return;
+	}
+	
+	if (PlayerInfoWidgetInstance == nullptr)
+	{
+		PlayerInfoWidgetInstance = CreateWidget(GetWorld(), PlayerInfoWidget);
+		PlayerInfoWidgetInstance->AddToViewport();
+	}
+	else
+	{
+		if (PlayerInfoWidgetInstance->IsInViewport())
+		{
+			PlayerInfoWidgetInstance->RemoveFromParent();
+			PlayerInfoWidgetInstance = nullptr;
+		}
+	}
 }
 
 void ATPPlayerController::BeginPlay()

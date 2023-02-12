@@ -54,4 +54,10 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Camera Shake")
 	TSubclassOf<UCameraShakeBase> CameraShake;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="User Widget")
+	TSubclassOf<UUserWidget> PlayerInfoWidget;
+	
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category="User Widget")
+	UUserWidget* PlayerInfoWidgetInstance;
 };
