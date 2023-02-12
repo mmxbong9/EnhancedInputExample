@@ -1,0 +1,15 @@
+# configs
+*.vsconfig
+*.sln
+
+# .exe .exp .pdb
+*.exe
+*.exp
+*.pdb
+
+# directories
+.idea/
+.vs/
+Saved/
+Intermediate/
+Plugins/Developer/RiderLink/
